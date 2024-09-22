@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Item</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h2>Bán đồ dùng</h2>
+    <form action="/submit-item-sale" method="POST">
+        <label for="itemName">Tên vật phẩm:</label>
+        <input type="text" id="itemName" name="itemName" placeholder="Nhập tên vật phẩm" required><br><br>
+
+	<label>Chọn loại vật phẩm:</label><br>
+        <input type="checkbox" id="household" name="category" value="Đồ gia dụng">
+        <label for="household">Đồ gia dụng</label><br>
+
+        <input type="checkbox" id="study" name="category" value="Học tập">
+        <label for="study">Học tập</label><br>
+
+        <input type="checkbox" id="electronics" name="category" value="Điện tử">
+        <label for="electronics">Điện tử</label><br>
+
+        <input type="checkbox" id="furniture" name="category" value="Nội thất">
+        <label for="furniture">Nội thất</label><br>
+
+        <input type="checkbox" id="entertainment" name="category" value="Giải trí">
+        <label for="entertainment">Giải trí</label><br>
+
+        <input type="checkbox" id="other" name="category" value="Khác" onclick="toggleOtherInput(this)">
+        <label for="other">Khác</label>
+        <input type="text" id="otherInput" name="otherCategory" placeholder="Nhập loại khác" style="display:none;"><br><br>
+
+        <label for="damageCondition">Tình trạng hỏng hóc:</label><br>
+        <textarea id="damageCondition" name="damageCondition" rows="4" cols="50" placeholder="Mô tả tình trạng hỏng hóc (nếu có)"></textarea><br><br>
+
+        <label for="price">Giá :</label>
+        <input type="number" id="price" name="price" placeholder="Nhập giá mong muốn" required>
+	<span>(VNĐ)</span><br><br>
+
+        <label for="contactNumber">SĐT:</label>
+        <input type="tel" id="contactNumber" name="contactNumber" placeholder="Nhập số điện thoại liên hệ" required><br><br>
+
+        <label for="emailAddress">Địa chỉ Email:</label>
+        <input type="email" id="emailAddress" name="emailAddress" placeholder="Nhập email liên hệ" required><br><br>
+
+        <input type="submit" value="Đăng bán">
+    </form>
+
+    <script>
+        function toggleOtherInput(checkbox) {
+            const otherInput = document.getElementById('otherInput');
+            otherInput.style.display = checkbox.checked ? 'inline' : 'none';
+        }
+    </script>
+
+</body>
+</html>
